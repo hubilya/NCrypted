@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	 <title>NCrypted</title>
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+                <link rel="stylesheet" type="text/css" href="../catcher/style.css" />
+     
+ </head>
+   <body>
+    <div class="nav" id="myNav">
+       
+    <a class="active" href="#about">NCRYPTED</a>
+  <a href="#home">Home +</a>
+  <a href="#news">News +</a>
+  <a href="#contact">Contact +</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><img src="menu.png"></a>
+  
+    </div>
+ 
+     <style>
+         body{
+             background-color: #0D112A;   
+             margin: 0; padding: 0;
+         }
+
+.nav {
+    overflow: hidden;
+    border-bottom: 1px solid #00BD92;
+    line-height: 3em;
+}
+   
+
+          
+.nav a:not(:first-child) {
+  float: right;
+}
+
+.nav  a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    font-family:Montserrat;
+    padding:16px 50px;
+}
+.nav .icon {
+          display:none;
+           }
+
+         
+@media screen and (max-width:1000px) {
+  .nav a:not(:first-child) {display: none;}
+  .nav a.icon {
+      padding-right:10%;
+      height: 2em;
+    float: right;
+    display:block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+      
+  }
+}
+     </style>
+     
+        <script>
+     function myFunction() {
+  var x = document.getElementById("myNav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+        </script>
+ </body>
+</html>
