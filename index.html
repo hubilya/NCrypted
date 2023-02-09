@@ -30,13 +30,13 @@
        </div>
        
         <div class="container2">
-            <h3>online stats</h3><br><br><br>
+            <h3>online stats</h3><br>
             <div class="staty">
-            <div class="first box"><a id="data"></a><br>Bitcoin</div>
+            <div class="box1"><a id="bit"></a><br>Bitcoin</div>
             
-            <div class="second box"><a id="data"></a><br>Ethereum</div>
+            <div class="box2"><a id="eth"></a><br>Ethereum</div>
             
-            <div class="third box"><a id="data"></a><br>Dogecoin</div>
+            <div class="box3"><a id="dog"></a><br>Dogecoin</div>
             </div>
         </div>
         
@@ -45,6 +45,18 @@
            <h3>stay tuned :)</h3>
        </div>
      <style>
+             @font-face {
+              font-family: Glitch;
+              font-style: normal;
+              font-weight: 400;
+              src: url("glitch.ttf");
+            }
+             @font-face {
+              font-family: Tech;
+              font-style: normal;
+              font-weight: 400;
+              src: url("tech.ttf");
+            }
          body{
             background-color: #0D112A;   
             margin: 0;padding:0;
@@ -63,6 +75,7 @@
          }
          .container2 h3{
                  font-family:Glitch;
+             font-size: 2em;
          }
          .staty{
              padding-top:1em;
@@ -70,23 +83,21 @@
              
          }
          .staty div {
-             background-color:#fff;
-             color:white;
-             font-family:Montserrat;
-             font-weight: 500;
-            display:inline-block;
-            margin:0 2em 2em ;
-            padding:20px;
-             width:20%;
-             height:20%;
-             box-shadow: 3px 3px 3px 0px rgba(6,204,192,0.6);
+             color:#0ff;
              font-family: Tech;
-             font-size:1em;background: rgba( 40, 40, 40, 0.25 );
+             font-size: 170%;
+             display:inline-block;
+             margin:0 1em 2em ;
+             padding:20px;
+             width:20%;
+             height:50%;
+             box-shadow: 3px 3px 3px 0px rgba(6,204,192,0.6);
+             background: rgba( 40, 40, 40, 0.25 );
          }
+         
          @media screen and (max-width: 570px) {
           .staty div {
                        width:40%;
-              
             }
         }
          
@@ -98,39 +109,19 @@
          }
          .gradient img{
              /*background-color: #0ff;*/
-             box-shadow: 
-            0 0 40px 20px #fff, 0 0 100px 50px #0ff;
+             box-shadow: 0 0 40px 20px #fff, 0 0 100px 50px #0ff;
              border-radius:  40px 40px 40px 40px;
-             
-            
          }
-   @media screen and (max-width: 600px) {
+           @media screen and (max-width: 600px) {
           .gradient img {
                         border-radius:  35px 35px 35px 35px;
-              
             }
         }
-  
-  
           @media screen and (max-width: 400px) {
           .container img {
                         width: 60%;
-              
             }
         }
-       
-    @font-face {
-  font-family: Glitch;
-  font-style: normal;
-  font-weight: 400;
-  src: url("glitch.ttf");
-}
- @font-face {
-  font-family: Tech;
-  font-style: normal;
-  font-weight: 400;
-  src: url("tech.ttf");
-}
          h1{
             color: white;
             display: inline-block;
@@ -169,11 +160,8 @@
     position: fixed;
     background-color: #141419; 
     background: rgba( 70, 70, 70, 0.25 );
-
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-
-
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
    
 
@@ -238,7 +226,7 @@ backdrop-filter: blur( 4px );
                 x.className = "nav";
             }
      }
-                                            /*COIN PRICE*/
+                  /*                          
         var xmlhttp = new XMLHttpRequest();
     var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
@@ -256,8 +244,27 @@ backdrop-filter: blur( 4px );
    
       var usdValue = "$" + json["bpi"]["USD"]["rate"];
       
-      document.getElementById("data").innerHTML = usdValue 
-}
+      document.getElementById("bit").innerText = usdValue 
+}*/
+        /*COIN PRICE*/
+         let bs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
+        let es = new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade');
+        let ds = new WebSocket('wss://stream.binance.com:9443/ws/dogeusdt@trade');
+            let bitPriceElement = document.getElementById('bit');
+            let ethPriceElement = document.getElementById('eth');
+            let dogPriceElement = document.getElementById('dog');
+            
+        bs.onmessage = (event) => {
+                let bstockObject = JSON.parse(event.data);               bitPriceElement.innerHTML = parseFloat(bstockObject.p).toFixed(2);
+            };
+        
+            es.onmessage = (event) => {
+                let estockObject = JSON.parse(event.data);               ethPriceElement.innerHTML = parseFloat(estockObject.p).toFixed(2);
+            };
+        
+            ds.onmessage = (event) => {
+                let dstockObject = JSON.parse(event.data);               dogPriceElement.innerHTML = parseFloat(dstockObject.p).toFixed(2);
+            };
     </script>
  </body>
 </html>
