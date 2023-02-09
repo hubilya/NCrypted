@@ -25,18 +25,18 @@
           <h1 data-text="NCrypted.">Welcome to </h1><br>
                <h3>Here you can track the latest coins like Bitcoin Ethereum and Dogecoin</h3><br><br><br>
                    <div class="gradient">
-                       <img src="hehe.png">
+                       <img src="apple.png">
                    </div>
        </div>
        
         <div class="container2">
             <h3>online stats</h3><br><br><br>
             <div class="staty">
-            <div class="first box"><a id="data"></a><br><br>Bitcoin</div>
+            <div class="first box"><a id="data"></a><br>Bitcoin</div>
             
-            <div class="second box">Ethereum<br><br></div>
+            <div class="second box"><a id="data"></a><br>Ethereum</div>
             
-            <div class="third box">Dogecoin<br><br></div>
+            <div class="third box"><a id="data"></a><br>Dogecoin</div>
             </div>
         </div>
         
@@ -61,11 +61,15 @@
                 padding-top:1em;
                 text-align: center; 
          }
+         .container2 h3{
+                 font-family:Glitch;
+         }
          .staty{
              padding-top:1em;
              padding-bottom:5em;
+             
          }
-         .staty div{
+         .staty div {
              background-color:#19191f;
              color:white;
              font-family:Montserrat;
@@ -75,7 +79,8 @@
             padding:20px;
              width:20%;
              height:20%;
-             box-shadow: 5px 5px 5px 0px rgba(6,204,192,0.9);
+             box-shadow: 3px 3px 3px 0px rgba(6,204,192,0.6);
+             
          }
          @media screen and (max-width: 570px) {
           .staty div {
@@ -93,10 +98,9 @@
          .gradient img{
              /*background-color: #0ff;*/
              box-shadow: 
-            0 0 40px 15px #fff,  /* inner cyan */
-            0 0 90px 30px #00e398, /* middle magenta */
-            0 0 100px 30px #fff; /* outer white */
+            0 0 40px 20px #fff, 0 0 100px 50px #0ff;
              border-radius:  40px 40px 40px 40px;
+             
             
          }
    @media screen and (max-width: 600px) {
@@ -144,7 +148,7 @@
              
          }
          
-     .nav a:hover {
+     .active:hover {
   color: #3ff;
           background-color: transparent;
          text-shadow: 0 0 10px #3ff;
@@ -152,12 +156,18 @@
          
 .nav {
     overflow: hidden;
-    border-bottom: 2px solid #0ff;
+    border-bottom: 1px solid #0ff;
     line-height: 2.5em;
     width:100%;
     text-align:center;
     position: fixed;
-    background-color: #0D112A; 
+    background-color: #141419; 
+    background: rgba( 70, 70, 70, 0.25 );
+
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+
+
 }
    
 
