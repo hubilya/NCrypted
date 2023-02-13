@@ -1,10 +1,8 @@
 [
   {
-    "name": 1,
-    "password": "Post 1"
-  },
-  {
-    "id": 2,
-    "title": "Post 2"
+    "name": "name",
+    "password": "pass"
   }
 ]
+
+   
