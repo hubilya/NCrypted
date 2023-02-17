@@ -14,15 +14,16 @@
    <body>
     <div class="nav" id="myNav">
       <div class="logo"><a class="active" href="#about">NCRYPTED</a></div>
-      <a href="#home">Home +</a>
+      <a href="#home" >Home +</a>
+      <a href="#stats" onclick="Stats()">Stats</a>
       <a href="#news">News +</a>
       <a href="#contact">Contact +</a>
-      <a href="#about">About</a>
+      <a href="#login" class="login" onclick="Login()">Login</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()"><img src="burger.png"></a>
     </div>
       
        <div class="container">
-          <h1 data-text="NCrypted.">Welcome to </h1><br>
+          <h1 data-text="NCrypted">Welcome to </h1><br>
                <h3>Here you can track the latest coins like Bitcoin Ethereum and Dogecoin</h3><br><br><br>
                    <div class="gradient">
                        <img src="apple.png">
@@ -30,7 +31,9 @@
        </div>
        
         <div class="container2">
+           
             <h3>online stats</h3><br>
+            
             <div class="staty">
             <div class="box1"><a id="bit"></a><br>Bitcoin</div>
             
@@ -41,10 +44,71 @@
         </div>
         
        <div class="container3">
-           <h1>UPDATES UPCOMING</h1><br><br>
-           <h3>stay tuned :)</h3>
+            
+            
+    
+               <h1>SignIn:</h1><br>
+  
+  
+  <input type="text"  id="username" name="new_username" placeholder="NAME">
+  <br><br>
+  <input type="password"  id="password" name="new_password" placeholder="PASSWORD">
+  <br><br>
+  <button id="add_btn2" onclick="New()">Submit</button>
+  
+               <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+            <p id="login-ok-msg">succesfully <span id="error-msg-second-line">logged in</span></p>
+                <h1>LogIn:</h1><br>
+                
+    <form id="login-form">
+                  <input type="text" name="username" id="username-field" placeholder="Username">
+                  <br><br>
+                  <input type="password" name="password" id="password-field" placeholder="Password">
+                  <br><br>
+                  <input type="submit" value="Login" id="login-form-submit">
+    </form>
        </div>
-     <style>
+<style>
+     
+
+
+#login-ok-msg {
+  
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-family:Glitch;
+  color: black;
+  border: 1px solid #28d500;
+  background-color: #2aff50;
+  opacity: 0;
+}
+#login-error-msg {
+  
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-family:Glitch;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+
+.login-form-field::placeholder {
+  color: #3a3a3a;
+}
+
+
+       @font-face {
+              font-family: Neutronium;
+              font-style: normal;
+              font-weight: 400;
+              src: url("neutronium.medium.ttf");
+            }
              @font-face {
               font-family: Glitch;
               font-style: normal;
@@ -72,6 +136,7 @@
                 background-color:#141419;
                 padding-top:1em;
                 text-align: center; 
+            
          }
          .container2 h3{
                  font-family:Glitch;
@@ -79,20 +144,22 @@
          }
          .staty{
              padding-top:1em;
-             padding-bottom:5em;
-             
+             padding-bottom:3em;
          }
+         
          .staty div {
              color:#0ff;
              font-family: Tech;
-             font-size: 170%;
+             font-size: 40px;
              display:inline-block;
              margin:0 1em 2em ;
              padding:20px;
              width:20%;
              height:50%;
-             box-shadow: 3px 3px 3px 0px rgba(6,204,192,0.6);
-             background: rgba( 40, 40, 40, 0.25 );
+             background: rgba( 50, 250, 250, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+border-radius: 10px;
+border: 1px solid rgba( 80, 80, 80, 0.1 );
          }
          
          @media screen and (max-width: 570px) {
@@ -103,9 +170,15 @@
          
          
          .container3 {
-             height:380px;
-             padding-top:6em;
+             padding-bottom:4em;
+             
+             display:inline-block;
              text-align: center;
+             width:100%;
+         }
+.container3 h1{
+             font-family:Montserrat;
+             font-size: 1.8em;
          }
          .gradient img{
              /*background-color: #0ff;*/
@@ -126,13 +199,14 @@
             color: white;
             display: inline-block;
             font-family:Montserrat;  
-             font-weight:800;
+             font-weight:200;
          }
          h1:after {
           content:attr(data-text);
           color: #0ff;
           transform:translateX(-100%);
-             font-size: 40px;
+             font-size: 150%;
+             font-family:Montserrat;
              /*font-family:Neutronium;*/
          }
     
@@ -212,7 +286,7 @@
     text-align: left;
     }
 }
-        
+           
      </style>
      
     <script>
@@ -246,8 +320,103 @@
       
       document.getElementById("bit").innerText = usdValue 
 }*/
-        /*COIN PRICE*/
-         let bs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
+        /*COIN PRICES*/
+     
+        
+        
+// When the user clicks on the button, scroll to the element of the document
+function Stats() {
+  document.documentElement.scrollTop = 820;
+}
+    function Login() {
+  document.documentElement.scrollTop = 1200;
+}    
+        
+        
+        
+        
+                                    //LOGIN FORM PASS from local github json file.
+   /*
+   var xmlhttp = new XMLHttpRequest();
+    var url = "https://hubilya.github.io/NCrypted/db.json";
+
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4  &&  this.status == 200) {
+        var json = JSON.parse(this.responseText);
+        parseJson(json);
+      }		
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function parseJson(json) {
+      var name = json["name"];
+      var pass = json["password"];
+        
+            const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username == name && password == pass) {
+        alert("You have successfully logged in.");
+        location.reload();
+    } else {
+        loginErrorMsg.style.opacity = 1;
+    }
+})
+}
+*/
+                                //SIGNIN/LOGIN FORM PASS from json.placeholder.
+            function New() {
+     
+      var name = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
+if(name == "" || pass == ""){
+    alert("Please FILLOUT the signin form")
+}else{
+
+        
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+          method: 'POST',
+          body: JSON.stringify({
+            username: name,
+            password: pass,
+          }),
+          headers: {
+            "Content-type": "application/json"
+          }
+        })  
+        .then(response => response.json())
+        .then(json => {alert("Your login now:  " + name +  "       \n"   +  "Password:  " + pass)
+          console.log('response: ' + JSON.stringify(json));
+             
+        })
+        
+}
+        
+        
+        
+        //login auth
+                        const loginForm = document.getElementById("login-form");
+                        const loginButton = document.getElementById("login-form-submit");
+                        const loginErrorMsg = document.getElementById("login-error-msg");
+                        const loginokMsg = document.getElementById("login-ok-msg");
+                
+                        loginButton.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            const username = loginForm.username.value;
+                            const password = loginForm.password.value;
+
+                            if (username === name && password === pass) {
+                                
+                                 /*COIN PRICES*/
+        let bs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
         let es = new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade');
         let ds = new WebSocket('wss://stream.binance.com:9443/ws/dogeusdt@trade');
             let bitPriceElement = document.getElementById('bit');
@@ -255,16 +424,42 @@
             let dogPriceElement = document.getElementById('dog');
             
         bs.onmessage = (event) => {
-                let bstockObject = JSON.parse(event.data);               bitPriceElement.innerHTML = parseFloat(bstockObject.p).toFixed(2);
+                let bstockObject = JSON.parse(event.data);               
+            bitPriceElement.innerHTML = parseFloat(bstockObject.p).toFixed(2);
             };
-        
             es.onmessage = (event) => {
-                let estockObject = JSON.parse(event.data);               ethPriceElement.innerHTML = parseFloat(estockObject.p).toFixed(2);
+                let estockObject = JSON.parse(event.data);               
+                ethPriceElement.innerHTML = parseFloat(estockObject.p).toFixed(2);
             };
-        
             ds.onmessage = (event) => {
-                let dstockObject = JSON.parse(event.data);               dogPriceElement.innerHTML = parseFloat(dstockObject.p).toFixed(2);
+                let dstockObject = JSON.parse(event.data);               
+                dogPriceElement.innerHTML = parseFloat(dstockObject.p).toFixed(2);
             };
+                                
+                                
+                                loginokMsg.style.opacity = 1;
+                                setTimeout(function(){
+                                loginokMsg.style.opacity = 0;
+                                }, 3000);
+                                   
+                            } 
+                            else {
+                                loginErrorMsg.style.opacity = 1;
+                                setTimeout(function(){
+                                loginErrorMsg.style.opacity = 0;
+                                }, 3000);
+                                
+                            }
+       
+                        })
+               
+        
+}
+        
+        
+        
+        
+        
     </script>
  </body>
 </html>
