@@ -44,10 +44,11 @@
         </div>
         
        <div class="container3">
-            
+
+            <div class="sign">
             <h1>SignIn:</h1><br>
   
-                <div class="sign">
+                
                   <input type="text"  id="username" name="new_username" placeholder="Username">
                   <br><br>
                   <input type="password"  id="password" name="new_password" placeholder="Password">
@@ -58,18 +59,18 @@
             <p id="login-error-msg">Invalid username <span id="error-msg-second-line">or password</span></p>
             <p id="login-ok-msg">Succesfully <span id="error-msg-second-line">logged in</span></p>
             
+            <div class="login">  
             <h1>LogIn:</h1><br>
                
-                <div class="login">            
+                          
                   <form id="login-form">
                   <input type="text" name="username" id="username-field" placeholder="Username">
                   <br><br>
                   <input type="password" name="password" id="password-field" placeholder="Password">
                   <br><br>
-                      <button  id="login-form-submit">login</button>
+                  <input type="submit" value="Login" id="login-form-submit">
                   </form>
                 </div>  
-      
        </div>
 <style>
      
@@ -101,118 +102,11 @@
 }
 
 
-.login-form::placeholder {
-  color: #3a3a3a;
-    
-}
-    input{
-        background-color:transparent;
-        border: 1px solid #0ff;
-       font-size: 1.2em;
-        color: #fff;
-    }
 
 
-/* CSS */
-button,
-button:after {
-  width: 150px;
-  height: 76px;
-  line-height: 78px;
-  font-size: 20px;
-  font-family: 'Glitch', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #0D112A 5%);
-  border: 0;
-  color: #fff;
-  letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
-  outline: transparent;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
 
-button:after {
-  --slice-0: inset(50% 50% 50% 50%);
-  --slice-1: inset(80% -6px 0 0);
-  --slice-2: inset(50% -6px 30% 0);
-  --slice-3: inset(10% -6px 85% 0);
-  --slice-4: inset(40% -6px 43% 0);
-  --slice-5: inset(80% -6px 5% 0);
-  
-  content: 'NCRYPTED';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #0D112A 3%, #0D112A 5%, #0D112A 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
-  clip-path: var(--slice-0);
-}
 
-button:hover:after {
-  animation: 1s glitch;
-  animation-timing-function: steps(2, end);
-}
 
-@keyframes glitch {
-  0% {
-    clip-path: var(--slice-1);
-    transform: translate(-20px, -10px);
-  }
-  10% {
-    clip-path: var(--slice-3);
-    transform: translate(10px, 10px);
-  }
-  20% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 10px);
-  }
-  30% {
-    clip-path: var(--slice-3);
-    transform: translate(0px, 5px);
-  }
-  40% {
-    clip-path: var(--slice-2);
-    transform: translate(-5px, 0px);
-  }
-  50% {
-    clip-path: var(--slice-3);
-    transform: translate(5px, 0px);
-  }
-  60% {
-    clip-path: var(--slice-4);
-    transform: translate(5px, 10px);
-  }
-  70% {
-    clip-path: var(--slice-2);
-    transform: translate(-10px, 10px);
-  }
-  80% {
-    clip-path: var(--slice-5);
-    transform: translate(20px, -10px);
-  }
-  90% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 0px);
-  }
-  100% {
-    clip-path: var(--slice-1);
-    transform: translate(0);
-  }
-}
-
-@media (min-width: 768px) {
-  button,
-  button:after {
-    width: 100px;
-    height: 46px;
-    line-height: 48px;
-  }
-}
     
        @font-face {
               font-family: Neutronium;
@@ -247,8 +141,8 @@ button:hover:after {
                 background-color:#141419;
                 padding-top:1em;
                 text-align: center; 
-            
          }
+   
          .container2 h3{
                  font-family:Glitch;
              font-size: 2em;
@@ -275,7 +169,7 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
          
          @media screen and (max-width: 570px) {
           .staty div {
-                       width:40%;
+                       width:60%;
             }
         }
          
@@ -287,9 +181,7 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
              width:100%;
              
          }
-    .container3 div{
-        display:inline-block;
-    }
+  
    
             .container3 h1
              {
@@ -529,7 +421,7 @@ if(name == "" || pass == ""){
                             const username = loginForm.username.value;
                             const password = loginForm.password.value;
 
-                            if (username === name && password === pass) {
+                             if (username === name && password === pass) {
                                 
                                  /*COIN PRICES*/
         let bs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
@@ -556,14 +448,15 @@ if(name == "" || pass == ""){
                                 loginokMsg.style.opacity = 1;
                                 setTimeout(function(){
                                 loginokMsg.style.opacity = 0;
-                                }, 3000);
+                                }, 2000);
                                    
                             } 
+                            
                             else {
                                 loginErrorMsg.style.opacity = 1;
                                 setTimeout(function(){
                                 loginErrorMsg.style.opacity = 0;
-                                }, 3000);
+                                }, 1000);
                                 
                             }
        
