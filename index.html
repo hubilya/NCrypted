@@ -323,17 +323,18 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
          }
          
 @media screen and (max-width:800px) {
-  .nav a:not(:first-child) {display: none;z-index:100;}
+	.gradient img{
+	height:75%;
+            width:75%;
+		
+	}
+  .nav a:not(:first-child) {display: none;}
   .nav a.icon {
     height: 1em;
     float: right;
     display:block; 
   }
-	.gradient img{
-	height:75%;
-            width:75%;
-		z-index:-100;
-	}
+	
 }
 /*position relative on fixed*/
 @media screen and (max-width: 800px) {
