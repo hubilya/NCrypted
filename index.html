@@ -323,7 +323,7 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
          }
          
 @media screen and (max-width:800px) {
-  .nav a:not(:first-child) {display: none;}
+  .nav a:not(:first-child) {display: none;z-index:100;}
   .nav a.icon {
     height: 1em;
     float: right;
@@ -337,7 +337,7 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
 }
 /*position relative on fixed*/
 @media screen and (max-width: 800px) {
-  .nav.responsive {position: fixed;}
+  .nav.responsive {position: fixed;z-index:100;}
   .nav.responsive .icon {
     position: absolute;
     right: 0;
@@ -377,7 +377,7 @@ border: 1px solid rgba( 80, 80, 80, 0.1 );
              2px 2px 25px #000 inset,
              -45px -45px 25px RGBA(0,0,0, 0.5) inset, 
              25px 25px 45px RGBA(0,0,0, 0.45) inset;
-  transform:rotateX(6deg) rotateY(6deg) ;
+  transform:rotateX(6deg) rotateY(6deg) rotateZ(6deg);
 	}
 
      </style>
