@@ -52,7 +52,7 @@
 
 
 function Stats() {
-  document.documentElement.scrollTop = 1020;
+  document.documentElement.scrollTop = 220;
 }
     function Login() {
   document.documentElement.scrollTop = 1800;
