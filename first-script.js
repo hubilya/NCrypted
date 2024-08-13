@@ -49,9 +49,7 @@
 
 
 // When the user clicks on the button, scroll to the element of the document
-function Home() {
-  document.documentElement.scrollTop = 0;
-}
+
 
 function Stats() {
   document.documentElement.scrollTop = 820;
