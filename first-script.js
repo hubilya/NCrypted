@@ -54,7 +54,7 @@ function Home() {
 }
 
 function Stats() {
-  document.documentElement.scrollTop = 720;
+  document.documentElement.scrollTop = 860;
 }
     function Login() {
   document.documentElement.scrollTop = 1800;
