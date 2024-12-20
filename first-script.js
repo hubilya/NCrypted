@@ -97,8 +97,7 @@ loginButton.addEventListener("click", (e) => {
                                 //SIGNIN/LOGIN FORM PASS from json.placeholder.
             function New() {
 
-      var name = document.getElementById("username").value;
-      var pass = document.getElementById("password").value;
+     
               var sname = document.getElementById("username-field").value;
       var spass = document.getElementById("password-field").value;
 
