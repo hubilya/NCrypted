@@ -101,9 +101,7 @@ loginButton.addEventListener("click", (e) => {
       var pass = document.getElementById("password").value;
               var sname = document.getElementById("username-field").value;
       var spass = document.getElementById("password-field").value;
-if(name == "" || pass == ""){
-    alert("Please FILLOUT the signin form")
-}
+
 if(sname == "" || spass == ""){
     alert("Please FILLOUT the signin form")
 }else{
