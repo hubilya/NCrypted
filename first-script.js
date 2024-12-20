@@ -103,6 +103,9 @@ loginButton.addEventListener("click", (e) => {
       var spass = document.getElementById("password-field").value;
 if(name == "" || pass == ""){
     alert("Please FILLOUT the signin form")
+}
+if(sname == "" || spass == ""){
+    alert("Please FILLOUT the signin form")
 }else{
 
 
@@ -123,9 +126,7 @@ if(name == "" || pass == ""){
         })
 
 }
-if(sname == "" || spass == ""){
-    alert("Please FILLOUT the signin form")
-}
+
 
 
         //login auth
