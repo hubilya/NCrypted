@@ -143,7 +143,7 @@ if(name == "" || pass == ""){
 
                                 loginokMsg.style.opacity = 1;
                                 setTimeout(function(){
-                                loginokMsg.style.opacity = location. reload() ;
+                                loginokMsg.style.opacity = window. location. reload() ;
                                 }, 2000);
                                 
 
