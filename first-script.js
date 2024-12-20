@@ -97,11 +97,10 @@ loginButton.addEventListener("click", (e) => {
                                 //SIGNIN/LOGIN FORM PASS from json.placeholder.
             function New() {
 
-     
-              var sname = document.getElementById("username-field").value;
-      var spass = document.getElementById("password-field").value;
+      var name = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
 
-if(sname == "" || spass == ""){
+if(name == "" || pass == ""){
     alert("Please FILLOUT the signin form")
 }else{
 
